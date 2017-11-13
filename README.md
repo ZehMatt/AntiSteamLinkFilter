@@ -1,5 +1,8 @@
 # AntiSteamLinkFilter
-Prevents steam from checking every link before opening.
+If you feel frustrated about Steam and Links on the Chat taking forever to open then your frustration shall end here and now.
+
+# What does it do?
+Steam wants to check the Link before actually opening it and check the URL against their database for malicious links, this can take a while and there is no way to disable it. This little tool blocks Steam from checking all the unknown Links.
 
 # How does it work?
 We will feed steam a dll called "steamconsole.dll" which implements the basic startup of Steam. I discovered this while reversing some of the Steam libraries that whenever the -textclient parameter is passed Steam will try to load "steamconsole.dll". We will try to find the link filter by a pattern and patch it at runtime.
